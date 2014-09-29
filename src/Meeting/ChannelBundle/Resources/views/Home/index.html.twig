@@ -1,0 +1,18 @@
+{% extends "MeetingChannelBundle::layouts.html.twig" %}
+
+{% block title %}MeetingChannelBundle:Home:index{% endblock %}
+
+{% block first %}
+
+    <h1>Makoto Global Meeting System</h1>
+    <p>Enter Channel Name And Join It</p>
+
+    {{ form_start(form) }}
+
+    {{ form_widget(form.name) }}
+
+    {{ form_widget(form.submit) }}
+
+    {{ form_end(form) }}
+
+{% endblock %}

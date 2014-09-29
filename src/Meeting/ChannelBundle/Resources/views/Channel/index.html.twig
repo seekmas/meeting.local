@@ -1,0 +1,72 @@
+{% extends "MeetingChannelBundle::layouts.html.twig" %}
+
+{% block title %}MeetingChannelBundle:Home:index{% endblock %}
+
+{% block first %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <video id="localVideo"></video>
+
+            <div  id="remoteVideos"></div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('SimpleWebRTC/socket.io.js') }}"></script>
+    <script src="{{ asset('SimpleWebRTC/simplewebrtc.bundle.js') }}"></script>
+    <script>
+        var webrtc = new SimpleWebRTC({
+            // the id/element dom element that will hold "our" video
+            localVideoEl: 'localVideo',
+            // the id/element dom element that will hold remote videos
+            remoteVideosEl: 'remoteVideos',
+            // immediately ask for camera access
+            autoRequestMedia: true
+        });
+
+        webrtc.on('readyToCall', function () {
+            // you can name it anything
+            webrtc.joinRoom('your awesome room name');
+        });
+
+
+    $(function(){
+
+        $('video').on('click' , function(){
+
+            $(this).addClass('full');
+
+        });
+
+    });
+    </script>
+
+{% endblock %}
+
+{% block stylesheet %}
+
+<style>
+    #remoteVideos video {
+        width: 350px;
+    }
+    #localVideo {
+        width: 350px;
+    }
+
+
+    video {
+        float: left;
+        margin-left: 10px;
+        margin-bottom: 10px;
+
+    }
+</style>
+
+{% endblock %}

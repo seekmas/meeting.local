@@ -1,0 +1,7 @@
+home_page:
+    resource: "@MeetingChannelBundle/Controller/HomeController.php"
+    type: annotation
+
+channel_page:
+    resource: "@MeetingChannelBundle/Controller/ChannelController.php"
+    type: annotation

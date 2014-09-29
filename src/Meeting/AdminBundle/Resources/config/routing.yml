@@ -1,0 +1,3 @@
+meeting_admin_homepage:
+    resource: "@MeetingAdminBundle/Controller/DefaultController.php"
+    type: annotation

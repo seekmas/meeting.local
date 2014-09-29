@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sublime - stunning free HTML5/CSS3 website template</title>
+    <meta charset="utf-8">
+    <meta name="author" content="pixelhint.com">
+    <meta name="description" content="Sublime Stunning free HTML5/CSS3 website template"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('channel/css/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('channel/css/fancybox-thumbs.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('channel/css/fancybox-buttons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('channel/css/fancybox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('channel/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('channel/css/main.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap-3.2.0-dist/css/bootstrap.min.css') }}">
+    {% block stylesheet %}{% endblock %}
+
+
+    <script type="text/javascript" src="{{ asset('channel/js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('channel/js/fancybox.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('channel/js/fancybox-buttons.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('channel/js/fancybox-media.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('channel/js/fancybox-thumbs.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('channel/js/wow.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('channel/js/main.js') }}"></script>
+    {% block javascripts %}{% endblock %}
+</head>
+<body>
+
+<section class="billboard light">
+    <header class="wrapper light">
+        <a href="#"><img class="logo" src="{{ asset('channel/img/logo_light.png') }}" alt=""/></a>
+        <nav>
+            <ul>
+                <li><a href="">Notifictions</a></li>
+                <li><a href="">Activity</a></li>
+                <li><a href="">Calender</a></li>
+                <li><a href="">Notes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="caption light animated wow fadeInDown clearfix">
+
+    {% block first %}
+
+    {% endblock %}
+
+    </div>
+</section><!--  End billboard  -->
+
+{% block body %}
+
+{% endblock %}
+
+
+
+
+<footer>
+    <div class="wrapper">
+        <div class="rights">
+            <img src="{{ asset('channel/img/footer_logo.png') }}" alt="" class="footer_logo"/>
+            <p>© Makoto. All Rights Reserved 2014 - <a href="#" target="_blank">Video Link</a></p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer><!--  End footer  -->
+<script>
+    now = new Date(),hour = now.getHours()
+    if(hour < 6){console.log("凌晨好！")}
+    else if (hour < 9){console.log("早上好！")}
+    else if (hour < 12){console.log("上午好！")}
+    else if (hour < 14){console.log("中午好！")}
+    else if (hour < 17){console.log("下午好！")}
+    else if (hour < 19){console.log("傍晚好！")}
+    else if (hour < 22){console.log("晚上好！")}
+    else {console.log("夜里好！")}
+
+</script>
+</body>
+</html>
